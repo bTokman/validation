@@ -67,7 +67,7 @@ $result = $object->validate();
 
 class ValidationObject
 {
-    use ValidationTrait;
+    use bTokman\validation\ValidationTrait;
 
     public function __construct()
     {
