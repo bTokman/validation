@@ -18,7 +18,7 @@ class ValidationTraitTest extends TestCase
         parent::setUp();
     }
 
-    public function testFailureValidationMessageCount(): void
+    public function testFailureValidationKeys(): void
     {
         $result = $this->objectToValidation->validate();
 
@@ -27,7 +27,7 @@ class ValidationTraitTest extends TestCase
         }
     }
 
-    public function testFailureValidationKeys(): void
+    public function testFailureValidationMessageCount(): void
     {
         $result = $this->objectToValidation->validate();
 
