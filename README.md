@@ -11,7 +11,7 @@
     </a>
 </p>
 
-This is simple PHP standalone Trait, that can be used in any object. The validation process based on the [Symfony Validation Component](https://symfony.com/doc/current/components/validator.html)
+This is a simple PHP standalone trait, that can be used to validate properties in any object. The validation process based on the [Symfony Validation Component](https://symfony.com/doc/current/components/validator.html)
 
 # :rocket:  Installation
 This library requeired [PHP](https://www.php.net) version `7.2` or highter. And [composer](https://getcomposer.org/) - package manger for PHP.
@@ -25,7 +25,7 @@ This library requeired [PHP](https://www.php.net) version `7.2` or highter. And 
 After the installation you'll be able to use the `bTokman\validation\ValidationTrait` trait in your app.
 
 **You cannot override a trait's property in the class where the trait is used.**
-However, you can override a trait's property in a class that extends the class where the trait is used.
+However, you can override a trait's property in a class that extends the class where the trait is used, or you can override a trait's property in a class constructor.
 
 - Start using trait in your base class 
 - Declare validation rules in your extended class. [List of availible Rules](https://symfony.com/doc/current/validation.html#constraints)
@@ -62,6 +62,8 @@ $result = $object->validate();
 
 
 ```
+
+- Example with overriding in constructor
 
 ```php
 
