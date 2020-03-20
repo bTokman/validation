@@ -7,7 +7,9 @@ use Symfony\Component\Validator\{
     ConstraintViolation,
     ConstraintViolationListInterface,
     Exception\LogicException,
-    Exception\UnexpectedTypeException
+    Exception\UnexpectedTypeException,
+    Validation,
+    Validator\ValidatorInterface
 };
 
 /**
@@ -32,7 +34,7 @@ trait ValidationTrait
     /**
      * List of errors
      * [
-     *   'propertyName' => 'Error message'
+     *   'propertyName' => ['Error message1', 'Error message2', ...]
      * ]
      *
      * @var array
@@ -50,14 +52,14 @@ trait ValidationTrait
     public function validate(): ?array
     {
         foreach ($this->validationRules as $field => $rules) {
-            if (!is_array($rules)) {
+            if (!\is_array($rules)) {
                 throw new UnexpectedTypeException($field, 'array');
             }
 
             $this->processRules($rules, $field);
         }
 
-        return count($this->validationErrors) ? $this->validationErrors : null;
+        return \count($this->validationErrors) ? $this->validationErrors : null;
     }
 
     /**
@@ -83,19 +85,17 @@ trait ValidationTrait
          */
         $errors = $validator->validate($property, $validators);
 
-        if (count($errors)) {
+        if (\count($errors)) {
             $this->processErrors($errors, $field);
         }
     }
 
     /**
-     * Get validator instance
-     *
-     * @return \Symfony\Component\Validator\Validator\ValidatorInterface
+     * @return ValidatorInterface
      */
-    protected function getValidator()
+    protected function getValidator(): ValidatorInterface
     {
-        return \Symfony\Component\Validator\Validation::createValidator();
+        return Validation::createValidator();
     }
 
     /**

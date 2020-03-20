@@ -1,6 +1,19 @@
 {
   "name": "b-tokman/validation",
   "type": "library",
+  "description": "Simple standalone PHP validation trait. That can be user in any object",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "validation",
+    "trait",
+    "symfony validation",
+    "standalone"
+  ],
+  "support": {
+    "issues": "https://github.com/bTokman/validation/issues",
+    "source": "https://github.com/bTokman/validation"
+  },
   "authors": [
     {
       "name": "Bogdan Tokman",
