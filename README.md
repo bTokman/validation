@@ -31,11 +31,6 @@ However, you can override a trait's property in a class that extends the class w
 - Declare validation rules in your extended class. [List of availible Rules](https://symfony.com/doc/current/validation.html#constraints)
 - On a new instance of your class just call method `validate`. 
 
-**The validation result is** 
-- `array` of errors `[[fieldName] => [errorMessage1, errorMessag2, ...]` .
-- `null` if the validation was passed.
-
-
 
 ```php
 class BaseObject
@@ -86,3 +81,7 @@ $object = new ValidationObject();
 $result = $object->validate();
 
 ```
+
+**The validation result is** 
+- `array` of errors `[[fieldName] => [errorMessage1, errorMessag2, ...]` .
+- `null` if the validation was passed.
