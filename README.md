@@ -25,11 +25,10 @@ This library requeired [PHP](https://www.php.net) version `7.2` or highter. And 
 After the installation you'll be able to use the `bTokman\validation\ValidationTrait` trait in your app.
 
 **You cannot override a trait's property in the class where the trait is used.**
-However, you can override a trait's property in a class that extends the class where the trait is used, or you can override a trait's property in a class constructor.
-
-- Start using trait in your base class 
-- Declare validation rules in your extended class. [List of availible Rules](https://symfony.com/doc/current/validation.html#constraints)
-- On a new instance of your class just call method `validate`. 
+However, you can override a trait's property in a class that extends the class where the trait is used:
+  - Start using trait in your base class 
+  - Declare validation rules in your extended class. [List of availible Rules](https://symfony.com/doc/current/validation.html#constraints)
+  - On a new instance of your class just call method `validate`. 
 
 
 ```php
@@ -58,7 +57,8 @@ $result = $object->validate();
 
 ```
 
-- Example with overriding in constructor
+Or you can override a trait's property in a class constructor:
+
 
 ```php
 
