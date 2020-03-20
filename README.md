@@ -1,4 +1,4 @@
-<p align="center"><h1 align="center">:panda_face:  PHP VALIDATION TRAIT :panda_face:</h1></p>
+<p align="center"><h1 align="center">  PHP VALIDATION TRAIT</h1></p>
 <p align="center">
     <a href="https://packagist.org/packages/b-tokman/validation" target="_blank">
         <img src="https://badgen.net/packagist/lang/b-tokman/validation" alt="Programming language">
